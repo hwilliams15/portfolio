@@ -1,0 +1,183 @@
+body {
+  color: #fff;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  background-color: #222930;
+}
+
+.container {
+  max-width: 970px;
+}
+
+/*
+Main header
+*/
+#hamburger {
+  display: none;
+}
+
+#personal-info,
+.project-name {
+  text-transform: uppercase;
+}
+
+#personal-info {
+  font-family: 'Nixie One', cursive;
+  font-size: 50px;
+  text-align: right;
+}
+
+#monogram {
+  margin-top: 20px;
+}
+
+#monogram img {
+  width: 100px;
+}
+
+#header-logo img {
+  width: 100px;
+}
+
+/*
+Project Section formatting
+*/
+.project-link {
+  font-size: 20px;
+}
+
+.project-name {
+  font-size: 30px;
+}
+
+#project-row {
+  text-align: center;
+}
+
+#featured-work {
+  color: #f1684e;
+  font-size: 45px;
+}
+
+/*
+Navigation Formatting
+*/
+.nav a {
+  color: #f1684e;
+  font-size: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+.nav-item {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 33.333%;
+  text-align: center;
+  padding: 5px;
+}
+
+#navigation {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#nav-list {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/*
+*Media Queries
+*/
+
+/* When on anything other than a large device center the featured work header*/
+@media (max-width: 992px) {
+  #featured-work {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hidden-xs-custom {
+    display: none !important;
+  }
+
+  .visible-xs-inline-block-custom {
+    display: inline-block !important;
+  }
+
+  #personal-info h1 {
+    font-size: 20px;
+  }
+
+  #personal-info h3 {
+    font-size: 16px;
+  }
+
+  #featured-work h2 {
+    font-size: 30px;
+  }
+
+  /* The navigation bar will now stack and move off the screen for use with
+     the hamburger icon */
+  .nav {
+    z-index: 10;
+    background-color: #fff;
+    width: 300px;
+    position: absolute;
+    /* This trasform moves the drawer off canvas.
+       -315px moves it off screen accounting for bootstrap padding for
+       .container plus the width of the menu
+      -21px moves the menu under the horizontal rule
+    */
+    transform: translate(-315px, -21px);
+    /* Optionally, we animate the drawer. */
+    transition: transform 0.3s ease;
+  }
+
+  /*Move the navigation back into view */
+  #nav-list.open {
+    /*-15px moves it back accounting for bootstrap padding for .container
+      -21px moves the menu under the horizontal rule
+    */
+    transform: translate(-15px, -21px);
+  }
+
+  .nav-item {
+    display: list-item;
+    border-bottom: 1px solid #e0e0e0;
+    width: 100%;
+    text-align: left;
+  }
+
+  /*Place the hamburger icon*/
+  .header-menu {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: -30px;
+    padding: 1em;
+  }
+
+  .header-menu svg {
+    width: 32px;
+    fill: #e0e0e0;
+  }
+
+  #nav-column {
+    padding-left: 0;
+    padding-right: 0;
+    width: 300px;
+  }
+
+  #navigation {
+    margin: 0;
+  }
+
+  #nav-list {
+    height: 500px;
+  }
+
+}
